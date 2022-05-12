@@ -44,7 +44,7 @@ console.log(dividir(0,10));
 //Nível 3
 
 function quadradoDoNumero(numA) {
-    return numA * numA;
+    return multiplicar(numA, numA);
 }
 
 console.log(quadradoDoNumero(5));
