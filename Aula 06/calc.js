@@ -50,20 +50,19 @@ function quadradoDoNumero(numA) {
 console.log(quadradoDoNumero(5));
 
 function mediaDeTres(numA, numB, numC){
-    let soma = numA + numB + numC;
-    let total = soma / 3;
-    return total;
+    let primeiraSoma = adicionar(numA, numB);
+    let segundaSoma = adicionar(primeiraSoma, numC);
+    return dividir(segundaSoma, numC);
 }
 
-console.log(mediaDeTres(2,2,2));
+console.log(`${mediaDeTres(20, 50, 100)}`);
 
 
-function calcularPorcentagem(num, valorDaPorcentagem){
-    let totalPorcentagem = (valorDaPorcentagem * num) / 100;
-    return totalPorcentagem;
+function calcularPorcentagem(num, percentual){
+    return dividir(multiplicar(num, percentual), 100);
 }   
 
-console.log(calcularPorcentagem(50, 200));
+console.log(`${calcularPorcentagem(50, 200)}`);
 
 
 
