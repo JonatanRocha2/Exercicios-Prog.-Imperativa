@@ -36,10 +36,12 @@ function dividir(numA, numB) {
 
 console.log("================== Teste de Operações/Calculadora ==================")
 
-console.log(adicionar(10,10));
+/* console.log(adicionar(10,10));
 console.log(subtrair(10,10));
 console.log(multiplicar(10,10));
 console.log(dividir(0,10));
+ */
+
 
 //Nível 3
 
@@ -47,7 +49,7 @@ function quadradoDoNumero(numA) {
     return multiplicar(numA, numA);
 }
 
-console.log(quadradoDoNumero(5));
+//console.log(quadradoDoNumero(5));
 
 function mediaDeTres(numA, numB, numC){
     let primeiraSoma = adicionar(numA, numB);
@@ -55,15 +57,18 @@ function mediaDeTres(numA, numB, numC){
     return dividir(segundaSoma, numC);
 }
 
-console.log(`${mediaDeTres(20, 50, 100)}`);
+//console.log(`${mediaDeTres(20, 50, 100)}`);
 
 
 function calcularPorcentagem(num, percentual){
     return dividir(multiplicar(num, percentual), 100);
 }   
 
-console.log(`${calcularPorcentagem(50, 200)}`);
+//console.log(`${calcularPorcentagem(50, 200)}`);
 
 
+function geradorPorcentagem(percentual, num) {
+    return multiplicar(dividir(percentual, num), 100);
+}
 
-
+//console.log(`${geradorPorcentagem(50, 200)}`);
