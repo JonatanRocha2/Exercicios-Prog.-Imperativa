@@ -1,0 +1,22 @@
+{
+  "name": "exercicios-prog.-imperativa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonatanRocha2/Exercicios-Prog.-Imperativa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonatanRocha2/Exercicios-Prog.-Imperativa/issues"
+  },
+  "homepage": "https://github.com/JonatanRocha2/Exercicios-Prog.-Imperativa#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
