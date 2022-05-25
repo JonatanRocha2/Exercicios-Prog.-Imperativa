@@ -32,27 +32,33 @@ const opcoes = {
 
 function menuMicroondas(codigo, tempo) {
     
+    //variavel opcao recebe o id do objeto opcoes que sao passados como um array de IDs
     const opcao = opcoes[codigo];   
 
-    
+    //se a opcao inserida for inexistente
     if(!opcao){
         return console.log(`Opcao inexistente`);
     }
 
+    //variavel tempoOpcao recebe a variavel opcao que acessa o tempo padrao do objeto
     const tempoOpcao = opcao.padrao;
 
+    //verificacoes
+    //se tempo for menor que tempoPadrao
     if(tempo < tempoOpcao){
         console.log(`Tempo insuficiente`);
+    //se tempo inserido for menor que o dobro do tempo padrao e menor que o triplo do tempo padrao
     } else if(tempo >= tempoOpcao*2 && tempo <= tempoOpcao*3){
         console.log(`Comida queimou`);
+    //se tempo inserido for maior que o triplo do tempo padrao
     } else if(tempo >= tempoOpcao*3){
         console.log(`KABUUM!`);
+    //se todas as verificacoes forem falsas
     } else{
         console.log(`Pronto, pronto. Bom apetite!`);
     }
 
-    
-
 }
 
+//chamada da funcao
 menuMicroondas(6, 20);
