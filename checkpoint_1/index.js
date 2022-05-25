@@ -32,13 +32,14 @@ const opcoes = {
 
 function menuMicroondas(codigo, tempo) {
     
-    const opcao = opcoes[codigo];
-    const tempoOpcao = opcao.padrao;
+    const opcao = opcoes[codigo];   
 
     
     if(!opcao){
         return console.log(`Opcao inexistente`);
     }
+
+    const tempoOpcao = opcao.padrao;
 
     if(tempo < tempoOpcao){
         console.log(`Tempo insuficiente`);
@@ -54,4 +55,4 @@ function menuMicroondas(codigo, tempo) {
 
 }
 
-menuMicroondas(5, 20);
+menuMicroondas(6, 20);
