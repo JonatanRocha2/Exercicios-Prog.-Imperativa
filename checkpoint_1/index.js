@@ -62,3 +62,6 @@ function menuMicroondas(codigo, tempo) {
 
 //chamada da funcao
 menuMicroondas(6, 20);
+
+
+
