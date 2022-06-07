@@ -4,12 +4,15 @@ const participanteC = [7, 5, 10, 8, 3];
 
 
 function pontuacaoMaior(participante){
-    let soma = 0;
+    let maior = participante[0];
 
-    for(let i = 0; i < participante.length; i++){
-        soma += participante[i];   
+    for(let i = 1; i < participante.length; i++){
+        let nota = participante[i];
+        if(nota > maior){
+            maior = nota;
+        }   
     }
-    return soma;
+    return maior;
 }
 
 //console.log(pontuacaoMaior(participanteB));
