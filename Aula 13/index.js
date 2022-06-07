@@ -44,7 +44,9 @@ function vencedorCompeticao(competidorA, competidorB, competidorC){
     } else if(pontuacaoMaior(competidorC) > pontuacaoMaior(competidorA) && pontuacaoMaior(competidorC) > pontuacaoMaior(competidorB)){
         console.log("Vencedor Participante C por maior pontuação");
         
-    } else if(pontuacaoMedia(competidorA) > pontuacaoMedia(competidorB) && pontuacaoMedia(competidorA) > pontuacaoMedia(competidorC)){
+    } 
+    
+    if(pontuacaoMedia(competidorA) > pontuacaoMedia(competidorB) && pontuacaoMedia(competidorA) > pontuacaoMedia(competidorC)){
         console.log("Vencedor Participante A por maior média");
         
     } else if(pontuacaoMedia(competidorB) > pontuacaoMedia(competidorA) && pontuacaoMedia(competidorB) > pontuacaoMedia(competidorC)){
