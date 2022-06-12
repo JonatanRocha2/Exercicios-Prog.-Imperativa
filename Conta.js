@@ -48,16 +48,21 @@ let banco = {
       return resultado;
     },
 
-    deposito(titular, valor){
-        
-        
+    depositar(titular, valor){
+        titular = this.consultarCliente();
+
+        for(let i = 0; i < this.clientes.length; i++){
+            
+            let saldoAtual = this.clientes[i].saldo;
+            return saldoAtual += valor;              
+        }         
     },
 
-    saque(titular, valor){
+    //sacar(titular, valor){
 
 
 
-    }
+    //}
 };
 
-console.log(banco.consultarCliente('LonnieVerheijden'));
+console.log(banco.depositar('RamonConnel', 5000));
