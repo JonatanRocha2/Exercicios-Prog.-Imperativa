@@ -42,7 +42,8 @@ let banco = {
       let cliente = new Conta(numeroConta, tipoConta, saldo, titular);
       this.clientes.push(cliente);
     },
-
+    
+    //consultar cliente
     consultarCliente(titular) {
       for (let i = 0; i < this.clientes.length; i++) {
         let titularBuscado = this.clientes[i].titular;
@@ -52,12 +53,14 @@ let banco = {
       }
     },
 
+    //realizar deposito
     depositar(titular, valor){
         let clienteBuscado = this.consultarCliente(titular);
         clienteBuscado.saldo += valor;
         console.log("Deposito realizado! Seu novo saldo é de: " + clienteBuscado.saldo);
     },
 
+    //realizar saque
     sacar(titular, valor){
         let clienteBuscado = this.consultarCliente(titular);
         if(clienteBuscado && (clienteBuscado.saldo - valor) >= 0){
@@ -73,5 +76,10 @@ let banco = {
 
 
 
+/* 
+
 banco.depositar('BenditeHuggett', 5000);
-banco.consultarCliente('BenditeHuggett');
+banco.consultarCliente('BenditeHuggett'); 
+banco.sacar('BenditeHuggett', 1000); 
+
+*/
