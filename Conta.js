@@ -37,32 +37,41 @@ let listaContas = [abigaelNatte, ramonConnel, jarretLafuente, anselArdley, jacki
 let banco = {
     clientes: listaContas,
 
+    //cadastrar cliente
+    cadastrarCliente(numeroConta, tipoConta, saldo, titular){
+      let cliente = new Conta(numeroConta, tipoConta, saldo, titular);
+      this.clientes.push(cliente);
+    },
+
     consultarCliente(titular) {
-      let resultado = [];
       for (let i = 0; i < this.clientes.length; i++) {
         let titularBuscado = this.clientes[i].titular;
         if (titularBuscado === titular) {
           return this.clientes[i];
         }
       }
-      return resultado;
     },
 
     depositar(titular, valor){
-        titular = this.consultarCliente();
-
-        for(let i = 0; i < this.clientes.length; i++){
-            
-            let saldoAtual = this.clientes[i].saldo;
-            return saldoAtual += valor;              
-        }         
+        let clienteBuscado = this.consultarCliente(titular);
+        clienteBuscado.saldo += valor;
+        console.log("Deposito realizado! Seu novo saldo é de: " + clienteBuscado.saldo);
     },
 
-    //sacar(titular, valor){
-
-
-
-    //}
+    sacar(titular, valor){
+        let clienteBuscado = this.consultarCliente(titular);
+        if(clienteBuscado && (clienteBuscado.saldo - valor) >= 0){
+          clienteBuscado.saldo -= valor;
+          console.log("Saque realizado! Seu novo saldo é de: " + clienteBuscado.saldo);
+        } else {
+          console.log("Saque não realizado.");
+        }
+        
+    }
 };
 
-console.log(banco.depositar('RamonConnel', 5000));
+
+
+
+banco.depositar('BenditeHuggett', 5000);
+banco.consultarCliente('BenditeHuggett');
