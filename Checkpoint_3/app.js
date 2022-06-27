@@ -62,7 +62,7 @@ const curso = {
 
         if (aluno.qtdFaltas < this.faltasMaximas && media >= this.notaAprovacao) {
             resultado = console.log(aluno.nome + " aprovado por nota e presença");
-        }else if(aluno.qtdFaltas == this.faltasMaximas && media > (this.notaAprovacao * 1.0)){
+        }else if(aluno.qtdFaltas == this.faltasMaximas && media >= (this.notaAprovacao * 1.1)){
             resultado = console.log(aluno.nome + " aprovado por nota maior que 10%");
         }else {
             resultado = console.log(aluno.nome + " reprovado por nota e falta");
