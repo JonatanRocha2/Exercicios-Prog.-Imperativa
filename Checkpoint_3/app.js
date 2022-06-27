@@ -62,7 +62,7 @@ const curso = {
 
         if (aluno.qtdFaltas < this.faltasMaximas && media >= this.notaAprovacao) {
             resultado = console.log(aluno.nome + " aprovado por nota e presença");
-        }else if(aluno.qtdFaltas == this.faltasMaximas && media >= (this.notaAprovacao * 1.1)){
+        }else if(aluno.qtdFaltas == this.faltasMaximas && media > (this.notaAprovacao * 1.0)){
             resultado = console.log(aluno.nome + " aprovado por nota maior que 10%");
         }else {
             resultado = console.log(aluno.nome + " reprovado por nota e falta");
@@ -84,7 +84,7 @@ curso.addAluno('Nami', 4, [10, 9, 10, 9]);
 
 //console.log(curso.listaEstudantes);
 
-//console.log(curso.aprovadoOuReprovado(aluno3));
+//console.log(curso.aprovadoOuReprovado(aluno1));
 
 console.log(curso.listaResultados());
 
