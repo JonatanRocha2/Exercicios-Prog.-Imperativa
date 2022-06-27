@@ -32,26 +32,24 @@ const aluno2 = new Aluno('Zoro', 2, [2, 9, 7, 5]);
 const aluno3 = new Aluno('Sanji', 1, [10, 9, 7, 8]);
 const aluno4 = new Aluno('Ussop', 4, [1, 6, 3, 4]);
 
-aluno1.calcularMedia();
-aluno2.calcularMedia();
-aluno3.calcularMedia();
-aluno4.calcularMedia();
+// aluno1.calcularMedia();
+// aluno2.calcularMedia();
+// aluno3.calcularMedia();
+// aluno4.calcularMedia();
 
-aluno1.faltas();
-aluno2.faltas();
-aluno3.faltas();
-aluno4.faltas();
+// aluno1.faltas();
+// aluno2.faltas();
+// aluno3.faltas();
+// aluno4.faltas();
 
 
 /* Crie o objeto literal curso que tem como atributos: nome do curso (string), nota de aprovação (number), faltas máximas (number) e uma lista de estudantes (um array composto pelos alunos criados no passo 2). */
-
-const alunos = [aluno1, aluno2, aluno3, aluno4];
 
 const curso = {
     nomeCurso: '',
     notaAprovacao: 7,
     faltasMaximas: 5,
-    listaEstudantes: alunos,
+    listaEstudantes: [aluno1, aluno2, aluno3, aluno4],
     /* Crie o método que permite adicionar alunos à lista do curso, ou seja, quando chamamos nosso método em nosso objeto curso, deverá adicionar um aluno a mais na propriedade lista de estudantes do objeto curso. */
     addAluno(nome, qtdFaltas, notas){
         let aluno = new Aluno(nome, qtdFaltas, notas);
@@ -62,12 +60,12 @@ const curso = {
         let media = aluno.calcularMedia();
         let resultado;
 
-        if (aluno.qtdFaltas < this.limiteFaltas && media >= this.notaAprovacao) {
-            resultado = console.log(aluno.nome + " aprovado");
-        }else if(aluno.qtdFaltas == this.limiteFaltas && media >= (this.notaAprovacao * 1.1)){
-            resultado = console.log(aluno.nome + " aprovado");
+        if (aluno.qtdFaltas < this.faltasMaximas && media >= this.notaAprovacao) {
+            resultado = console.log(aluno.nome + " aprovado por nota e presença");
+        }else if(aluno.qtdFaltas == this.faltasMaximas && media >= (this.notaAprovacao * 1.1)){
+            resultado = console.log(aluno.nome + " aprovado por nota maior que 10%");
         }else {
-            resultado = console.log(aluno.nome + " reprovado");
+            resultado = console.log(aluno.nome + " reprovado por nota e falta");
         }
         return resultado;
     },
@@ -81,11 +79,14 @@ const curso = {
     }
 }
 
-//curso.addAluno('Nami', 4, [10, 9, 10, 9]);
+//teste metodo adicionar aluno
+curso.addAluno('Nami', 4, [10, 9, 10, 9]);
 
-//console.log(curso.aprovadoOuReprovado(aluno2));
+//console.log(curso.listaEstudantes);
 
-//console.log(curso.listaResultados());
+//console.log(curso.aprovadoOuReprovado(aluno3));
+
+console.log(curso.listaResultados());
 
 
 
