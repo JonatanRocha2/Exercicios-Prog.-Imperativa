@@ -86,7 +86,7 @@ curso.addAluno('Nami', 4, [10, 9, 10, 9]);
 
 //console.log(curso.aprovadoOuReprovado(aluno1));
 
-console.log(curso.listaResultados());
+curso.listaResultados();
 
 
 
